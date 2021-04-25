@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,11 +47,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Event.cs">
+    <Compile Include="CreateEvent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Event.Designer.cs">
-      <DependentUpon>Event.cs</DependentUpon>
+    <Compile Include="CreateEvent.Designer.cs">
+      <DependentUpon>CreateEvent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventList.cs" />
+    <Compile Include="EventManagment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventManagment.Designer.cs">
+      <DependentUpon>EventManagment.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -72,8 +80,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Event.resx">
-      <DependentUpon>Event.cs</DependentUpon>
+    <Compile Include="User.cs" />
+    <EmbeddedResource Include="CreateEvent.resx">
+      <DependentUpon>CreateEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventManagment.resx">
+      <DependentUpon>EventManagment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
