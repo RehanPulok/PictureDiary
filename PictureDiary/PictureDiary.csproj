@@ -72,6 +72,12 @@
     <Compile Include="Registration.Designer.cs">
       <DependentUpon>Registration.cs</DependentUpon>
     </Compile>
+    <Compile Include="UpdateEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateEvent.Designer.cs">
+      <DependentUpon>UpdateEvent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Upload Picture.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Registration.resx">
       <DependentUpon>Registration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateEvent.resx">
+      <DependentUpon>UpdateEvent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Upload Picture.resx">
       <DependentUpon>Upload Picture.cs</DependentUpon>

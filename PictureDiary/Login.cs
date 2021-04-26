@@ -36,11 +36,12 @@ namespace PictureDiary
             string sql = "SELECT Username, Password FROM USERS";
             SqlCommand command = new SqlCommand(sql,connection);
             SqlDataReader reader= command.ExecuteReader();
-            //List<User> users = new List<User>();
-
+            List<User> users = new List<User>();
+            User user = new User();
+            bool ispassmatch= false;
             while (reader.Read())
             {
-                User user = new User();
+               
                 user.Username = reader["Username"].ToString();
                 user.Password = reader["Password"].ToString();
                 if (user.Username == userNameTextBox.Text && user.Password == passwordTextBox.Text)
@@ -48,20 +49,22 @@ namespace PictureDiary
                     EventManagment eve = new EventManagment();
                     eve.Show();
                     this.Hide();
+                    ispassmatch = true;
                     break;
                 }
 
-                else
-                {
-                    MessageBox.Show("Wrong Password");
-                    break;
-                }
                 //users.Add(user);
 
 
 
             }
-            
+
+
+            if (ispassmatch=false)
+            {
+                MessageBox.Show("Wrong Credentials given");
+
+            }
 
 
 

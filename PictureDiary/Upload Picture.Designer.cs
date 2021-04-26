@@ -34,12 +34,14 @@ namespace PictureDiary
             this.browseButton = new System.Windows.Forms.Button();
             this.BackButton = new System.Windows.Forms.Button();
             this.uploadButton = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.EventIDTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox
             // 
-            this.pictureBox.Location = new System.Drawing.Point(82, 12);
+            this.pictureBox.Location = new System.Drawing.Point(82, 73);
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.Size = new System.Drawing.Size(795, 372);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -50,10 +52,10 @@ namespace PictureDiary
             // 
             this.photoTextBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.photoTextBox.Font = new System.Drawing.Font("Yu Gothic UI", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.photoTextBox.Location = new System.Drawing.Point(82, 440);
+            this.photoTextBox.Location = new System.Drawing.Point(82, 501);
             this.photoTextBox.Multiline = true;
             this.photoTextBox.Name = "photoTextBox";
-            this.photoTextBox.Size = new System.Drawing.Size(795, 191);
+            this.photoTextBox.Size = new System.Drawing.Size(795, 130);
             this.photoTextBox.TabIndex = 1;
             this.photoTextBox.Text = "Write something about the picture\r\n";
             // 
@@ -61,7 +63,7 @@ namespace PictureDiary
             // 
             this.browseButton.BackColor = System.Drawing.SystemColors.Menu;
             this.browseButton.Font = new System.Drawing.Font("Yu Gothic UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.browseButton.Location = new System.Drawing.Point(82, 390);
+            this.browseButton.Location = new System.Drawing.Point(82, 451);
             this.browseButton.Name = "browseButton";
             this.browseButton.Size = new System.Drawing.Size(170, 44);
             this.browseButton.TabIndex = 2;
@@ -84,7 +86,7 @@ namespace PictureDiary
             // 
             this.uploadButton.BackColor = System.Drawing.SystemColors.Menu;
             this.uploadButton.Font = new System.Drawing.Font("Yu Gothic UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uploadButton.Location = new System.Drawing.Point(707, 390);
+            this.uploadButton.Location = new System.Drawing.Point(707, 451);
             this.uploadButton.Name = "uploadButton";
             this.uploadButton.Size = new System.Drawing.Size(170, 44);
             this.uploadButton.TabIndex = 4;
@@ -92,12 +94,32 @@ namespace PictureDiary
             this.uploadButton.UseVisualStyleBackColor = false;
             this.uploadButton.Click += new System.EventHandler(this.uploadButton_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Yu Gothic UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(270, 23);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(115, 37);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Event ID";
+            // 
+            // EventIDTextBox
+            // 
+            this.EventIDTextBox.Location = new System.Drawing.Point(436, 23);
+            this.EventIDTextBox.Multiline = true;
+            this.EventIDTextBox.Name = "EventIDTextBox";
+            this.EventIDTextBox.Size = new System.Drawing.Size(300, 36);
+            this.EventIDTextBox.TabIndex = 6;
+            // 
             // UploadPicture
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(941, 652);
+            this.Controls.Add(this.EventIDTextBox);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.uploadButton);
             this.Controls.Add(this.BackButton);
             this.Controls.Add(this.browseButton);
@@ -107,7 +129,7 @@ namespace PictureDiary
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Upload Picture";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UploadPicture_FormClosing);
-            this.Load += new System.EventHandler(this.Form1_Load);
+            //this.Load += new System.EventHandler(this.UploadPicture_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -121,6 +143,8 @@ namespace PictureDiary
         private System.Windows.Forms.Button browseButton;
         private System.Windows.Forms.Button BackButton;
         private System.Windows.Forms.Button uploadButton;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox EventIDTextBox;
     }
 }
 

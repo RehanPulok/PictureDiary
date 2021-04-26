@@ -14,6 +14,7 @@ namespace PictureDiary
         public string Date { get; set; }
         public string LastUpdated { get; set; }
         public Bitmap Picture { get; set; }
+        public string Caption { get; set; }
 
     }
 }

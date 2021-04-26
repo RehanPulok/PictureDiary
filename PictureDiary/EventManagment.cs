@@ -51,6 +51,8 @@ namespace PictureDiary
                 even.EventName = reader["EventName"].ToString();
                 even.Date = reader["Date"].ToString();
                 even.LastUpdated = reader["LastUpdated"].ToString();
+                even.Caption = reader["Caption"].ToString();
+
                 events.Add(even);
             }
             EventDataGridView.DataSource = events;
@@ -60,6 +62,13 @@ namespace PictureDiary
         private void EventManagment_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void updateEventButton_Click(object sender, EventArgs e)
+        {
+            UpdateEvent upevent = new UpdateEvent();
+            this.Hide();
+            upevent.Show();
         }
     }
 }

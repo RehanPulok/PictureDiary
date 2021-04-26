@@ -56,6 +56,7 @@ namespace PictureDiary
             this.updateEventButton.TabIndex = 3;
             this.updateEventButton.Text = "Update Event";
             this.updateEventButton.UseVisualStyleBackColor = true;
+            this.updateEventButton.Click += new System.EventHandler(this.updateEventButton_Click);
             // 
             // deleteEventButton
             // 

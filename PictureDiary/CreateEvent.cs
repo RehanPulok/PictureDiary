@@ -14,6 +14,9 @@ namespace PictureDiary
 {
     public partial class CreateEvent : Form
     {
+        Image ig;
+        Bitmap bmp;
+        OpenFileDialog ofd = new OpenFileDialog();
         public CreateEvent()
         {
             InitializeComponent();
@@ -63,22 +66,48 @@ namespace PictureDiary
             SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["My Connection"].ConnectionString);
             connection.Open();
             
-            string sql = "INSERT INTO Events (EventName, Date, LastUpdated, Picture) VALUES ('" + EventTextBox.Text + "','" + eventdateTimePicker.Text + "','" + eventdateTimePicker.Text + "','" + null + "')";
+            string sql = "INSERT INTO Events (EventName, Date, LastUpdated, Picture, Caption) VALUES ('" + EventTextBox.Text + "','" + eventdateTimePicker.Text + "','" + eventdateTimePicker.Text + "','" + PictureBox.Image + "', '"+CaptionTextBox.Text+"')";
             SqlCommand command = new SqlCommand(sql, connection);
 
             int result = command.ExecuteNonQuery();
             if (result > 0)
             {
                 MessageBox.Show("Event Added");
-                UploadPicture upload = new UploadPicture();
+                //UploadPicture upload = new UploadPicture();
+                EventManagment events = new EventManagment();
                 this.Hide();
-                upload.Show();
+                events.Show();
+
+                
+                //upload.Show();
             }
             else
             {
                 MessageBox.Show("Error!!");
             }
+            connection.Close();
             
+        }
+
+        private void CreateEvent_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void browseButton_Click(object sender, EventArgs e)
+        {
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                ig = Image.FromFile(ofd.FileName);
+                bmp = (Bitmap)ig;
+                PictureBox.Image = bmp;
+
+            }
         }
     }
 }

@@ -22,10 +22,23 @@ namespace PictureDiary
             InitializeComponent();
         }
 
+        /*
         private void Form1_Load(object sender, EventArgs e)
         {
+            SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["My Connection"].ConnectionString);
+            connection.Open();
 
+            string sql = "SELECT ID FROM Events WHERE EventName = " + EventTextBox.Text);
+            SqlCommand command = new SqlCommand(sql, connection);
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.Read())
+            {
+                EventTextBox.Text = reader["EventName"].ToString();
+                DateTextBox.Text = reader["Date"].ToString();
+
+            }
         }
+        */
 
         private void browseButton_Click(object sender, EventArgs e)
         {
@@ -48,8 +61,8 @@ namespace PictureDiary
             EventManagment even = new EventManagment();
             even.Show();
             this.Hide();
-        
-           
+
+
 
             this.Hide();
         }
@@ -59,19 +72,39 @@ namespace PictureDiary
             SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["My Connection"].ConnectionString);
             connection.Open();
 
-            string sql = "INSERT INTO Event (Picture) VALUES ('" + pictureBox.Image + "')";
+            string sql = "INSERT INTO Events (Picture) VALUES ('" + pictureBox.Image + "') ";
             SqlCommand command = new SqlCommand(sql, connection);
 
             int result = command.ExecuteNonQuery();
             if (result > 0)
             {
                 MessageBox.Show("Picture Added");
-                
+
             }
             else
             {
                 MessageBox.Show("Error!!");
             }
+        } } }
+        /*
+
+        private void UploadPicture_Load(object sender, EventArgs e)
+        {
+            SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["My Connection"].ConnectionString);
+            connection.Open();
+
+            string sql = "SELECT ID FROM Events WHERE EventName = " + EventIDTextBox.Text;
+            SqlCommand command = new SqlCommand(sql, connection);
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.Read())
+            {
+                EventIDTextBox.Text = reader["ID"].ToString();
+                
+
+            }
+
+
         }
     }
 }
+        */
