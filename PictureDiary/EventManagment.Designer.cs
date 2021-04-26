@@ -67,6 +67,7 @@ namespace PictureDiary
             this.deleteEventButton.TabIndex = 4;
             this.deleteEventButton.Text = "Delete Event";
             this.deleteEventButton.UseVisualStyleBackColor = true;
+            this.deleteEventButton.Click += new System.EventHandler(this.deleteEventButton_Click);
             // 
             // EventDataGridView
             // 

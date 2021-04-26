@@ -70,6 +70,13 @@ namespace PictureDiary
             this.Hide();
             upevent.Show();
         }
+
+        private void deleteEventButton_Click(object sender, EventArgs e)
+        {
+            DeleteEvent delete = new DeleteEvent();
+            delete.Show();
+            this.Hide();
+        }
     }
 }
 

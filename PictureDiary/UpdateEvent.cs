@@ -102,5 +102,7 @@ namespace PictureDiary
             this.Hide();
 
         }
+
+        
     }
 }

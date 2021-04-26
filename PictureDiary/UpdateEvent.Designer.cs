@@ -138,6 +138,7 @@ namespace PictureDiary
             this.BackButton.TabIndex = 14;
             this.BackButton.Text = "Back";
             this.BackButton.UseVisualStyleBackColor = false;
+//            this.BackButton.Click += new System.EventHandler(this.BackButton_Click_1);
             // 
             // EventDateTimePicker
             // 

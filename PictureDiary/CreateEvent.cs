@@ -109,5 +109,12 @@ namespace PictureDiary
 
             }
         }
+
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+            EventManagment eventmanagment = new EventManagment();
+            eventmanagment.Show();
+            this.Hide();
+        }
     }
 }
